@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>강아지 퀴즈 🐾</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 폭죽 캔버스 -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- 시작 화면 -->
+  <div id="screen-welcome" class="screen active">
+    <div class="welcome-content">
+      <div class="dog-hero">🐶</div>
+      <h1>강아지 퀴즈</h1>
+      <p class="subtitle">강아지의 특징을 읽고 품종을 맞춰보세요!</p>
+      <div class="info-badges">
+        <span class="badge">📋 총 10문제</span>
+        <span class="badge">⏱️ 문제당 15초</span>
+        <span class="badge">✍️ 글자만 → 10점</span>
+        <span class="badge">📸 사진 보면 → 5점</span>
+      </div>
+      <button id="btn-start" class="btn-primary">시작하기 🐾</button>
+    </div>
+  </div>
+
+  <!-- 퀴즈 화면 -->
+  <div id="screen-quiz" class="screen">
+    <div class="quiz-container">
+
+      <header class="quiz-header">
+        <div class="question-counter">
+          <span id="q-current">1</span> / <span id="q-total">10</span>
+        </div>
+        <div class="score-display">점수: <span id="score">0</span><span class="score-max"> / 100</span></div>
+      </header>
+
+      <div class="timer-bar-container">
+        <div id="timer-bar" class="timer-bar"></div>
+      </div>
+      <div class="timer-label"><span id="timer-count">15</span>초</div>
+
+      <!-- 플립 카드 -->
+      <div class="flip-card" id="flip-card">
+        <div class="flip-card-inner" id="flip-card-inner">
+
+          <!-- 앞면: 텍스트 힌트 -->
+          <div class="flip-card-front">
+            <span class="front-score-badge">🏅 글자만 맞추면 10점!</span>
+            <p class="clue-icon">🔍</p>
+            <p id="clue-content" class="clue-content"></p>
+            <span class="tap-hint">👆 탭하면 사진 확인 (5점)</span>
+          </div>
+
+          <!-- 뒷면: 사진 -->
+          <div class="flip-card-back">
+            <div id="loading-spinner" class="spinner"></div>
+            <img id="dog-photo" src="" alt="강아지 사진">
+            <div id="photo-fallback" class="photo-error">사진을 불러올 수 없어요</div>
+            <span class="back-score-badge">📸 5점</span>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="question-text">이 강아지의 품종은 무엇일까요?</p>
+
+      <div id="answer-grid" class="answer-grid">
+        <button class="btn-answer" data-index="0"></button>
+        <button class="btn-answer" data-index="1"></button>
+        <button class="btn-answer" data-index="2"></button>
+        <button class="btn-answer" data-index="3"></button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 결과 화면 -->
+  <div id="screen-end" class="screen">
+    <div class="end-content">
+      <div class="end-grade-emoji" id="end-emoji">🏆</div>
+      <h2 id="end-title">강아지 마스터!</h2>
+      <p class="end-score">
+        <span id="end-score-val">100</span> / 100 점
+      </p>
+      <p id="end-message" class="end-message"></p>
+      <button id="btn-restart" class="btn-primary">다시 하기 🔄</button>
+    </div>
+  </div>
+
+  <!-- 견종 정보 카드 -->
+  <div id="breed-info-sheet" class="breed-info-sheet">
+    <div class="breed-info-content">
+      <div class="breed-info-header">
+        <span id="info-badge" class="info-badge"></span>
+        <h3 id="info-breed-name"></h3>
+        <p id="info-breed-en"></p>
+      </div>
+      <p id="info-description" class="info-description"></p>
+      <button id="info-next-btn" class="btn-next">다음 문제 →</button>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
