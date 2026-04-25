@@ -40,8 +40,28 @@ function shuffle(arr) {
   return a;
 }
 
+const DECK_KEY = 'dog_quiz_deck';
+
 function buildQuestions() {
-  state.questions = shuffle(BREEDS).slice(0, TOTAL_QUESTIONS);
+  let deck = (() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(DECK_KEY));
+      // 저장된 덱이 유효하고 현재 견종 수와 맞으면 재사용
+      if (Array.isArray(saved) && saved.length > 0 && saved.every(i => i >= 0 && i < BREEDS.length)) {
+        return saved;
+      }
+    } catch (_) {}
+    return shuffle(BREEDS.map((_, i) => i));
+  })();
+
+  const indices = [];
+  while (indices.length < TOTAL_QUESTIONS) {
+    if (deck.length === 0) deck = shuffle(BREEDS.map((_, i) => i));
+    indices.push(deck.shift());
+  }
+
+  localStorage.setItem(DECK_KEY, JSON.stringify(deck));
+  state.questions = indices.map(i => BREEDS[i]);
 }
 
 function generateChoices(correctBreed) {
