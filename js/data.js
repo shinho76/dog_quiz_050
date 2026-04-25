@@ -124,4 +124,129 @@ const BREEDS = [
     apiPath: 'chihuahua', wikiTitle: 'Chihuahua (dog)',
     description: '세계에서 가장 작은 견종! 작지만 용감하고 자신감이 넘쳐요. 주인에 대한 충성심이 매우 강하고 애교가 많답니다. 💖',
   },
+  {
+    korean: '달마시안', english: 'Dalmatian',
+    apiPath: 'dalmatian', wikiTitle: 'Dalmatian (dog)',
+    description: '흰 바탕에 검은 점박이 무늬가 트레이드마크! 영화 101마리 달마시안으로 유명해졌어요. 활발하고 에너지가 넘쳐서 운동을 좋아한답니다. 🐾',
+  },
+  {
+    korean: '퍼그', english: 'Pug',
+    apiPath: 'pug', wikiTitle: 'Pug',
+    description: '주름진 얼굴과 동그란 눈이 매력적인 소형견! 중국 황실에서 사랑받은 역사가 있어요. 유쾌하고 장난기 많아 웃음을 주는 개예요. 😂',
+  },
+  {
+    korean: '시바 이누', english: 'Shiba Inu',
+    apiPath: 'shiba', wikiTitle: 'Shiba Inu',
+    description: '일본의 국견으로 자존심 강하고 독립적인 성격! 여우처럼 생긴 얼굴과 도도한 표정이 매력이에요. 인터넷 밈으로도 세계적으로 유명해졌어요. 🦊',
+  },
+  {
+    korean: '아키타', english: 'Akita',
+    apiPath: 'akita', wikiTitle: 'Akita (dog)',
+    description: '일본의 충견 하치코로 세계에 알려진 견종! 충성심이 강하고 위엄 있는 대형견이에요. 주인을 끝까지 기다리는 헌신적인 성격이랍니다. 🗾',
+  },
+  {
+    korean: '차우차우', english: 'Chow Chow',
+    apiPath: 'chow', wikiTitle: 'Chow Chow',
+    description: '사자처럼 풍성한 갈기 털과 보라빛 혀가 특징! 중국 고대 왕조부터 함께한 견종이에요. 고양이처럼 독립적이고 고고한 성격이랍니다. 🦁',
+  },
+  {
+    korean: '알래스칸 말라뮤트', english: 'Alaskan Malamute',
+    apiPath: 'malamute', wikiTitle: 'Alaskan Malamute',
+    description: '썰매를 끄는 강인한 북극 대형견! 허스키보다 더 크고 힘이 세요. 늑대처럼 생겼지만 사람을 잘 따르고 친근하답니다. 🏔️',
+  },
+  {
+    korean: '버니즈 마운틴 독', english: 'Bernese Mountain Dog',
+    apiPath: 'mountain/bernese', wikiTitle: 'Bernese Mountain Dog',
+    description: '스위스 알프스 출신의 3색 털 대형견! 온순하고 다정한 성격이에요. 아이들과 잘 어울리고 충성심이 강한 가족견이랍니다. ⛰️',
+  },
+  {
+    korean: '세인트 버나드', english: 'Saint Bernard',
+    apiPath: 'stbernard', wikiTitle: 'Saint Bernard (dog)',
+    description: '눈 속에서 조난자를 구하는 구조견의 전설! 목에 작은 통을 달고 알프스를 누볐어요. 거대한 몸이지만 성격은 온화하고 아이들을 좋아해요. 🏔️',
+  },
+  {
+    korean: '뉴펀들랜드', english: 'Newfoundland',
+    apiPath: 'newfoundland', wikiTitle: 'Newfoundland (dog)',
+    description: '물속에서 사람을 구하는 수영 실력자! 캐나다 출신의 거대한 검은 개예요. 성격이 온화하고 아이들과 잘 지내는 천사 같은 견종이에요. 🌊',
+  },
+  {
+    korean: '그레이트 피레니즈', english: 'Great Pyrenees',
+    apiPath: 'pyrenees', wikiTitle: 'Great Pyrenees',
+    description: '눈처럼 새하얀 털의 피레네 산맥 출신 양치기 견종! 양 떼를 늑대로부터 지키던 수호신이에요. 위엄 있고 차분하지만 가족은 끝까지 지킨답니다. 🐑',
+  },
+  {
+    korean: '로디지안 리지백', english: 'Rhodesian Ridgeback',
+    apiPath: 'ridgeback/rhodesian', wikiTitle: 'Rhodesian Ridgeback',
+    description: '등 중앙에 털이 반대 방향으로 자라는 특이한 견종! 아프리카에서 사자 사냥을 도왔던 용맹한 개예요. 충성스럽고 독립적인 성격이랍니다. 🦁',
+  },
+  {
+    korean: '아이리시 울프하운드', english: 'Irish Wolfhound',
+    apiPath: 'wolfhound/irish', wikiTitle: 'Irish Wolfhound',
+    description: '세계에서 키가 가장 큰 견종 중 하나! 아일랜드에서 늑대와 사냥하던 고대 견종이에요. 거대한 몸과 달리 온순하고 사람을 매우 좋아한답니다. 🐺',
+  },
+  {
+    korean: '와이마라너', english: 'Weimaraner',
+    apiPath: 'weimaraner', wikiTitle: 'Weimaraner',
+    description: '은빛 회색 털과 창백한 눈이 신비로운 독일 사냥개! 귀족이 즐기던 사냥에서 활약했어요. 에너지가 넘치고 주인과 함께하기를 좋아한답니다. 🌫️',
+  },
+  {
+    korean: '비즐라', english: 'Vizsla',
+    apiPath: 'vizsla', wikiTitle: 'Vizsla',
+    description: '황금빛 붉은 털의 헝가리 포인터! 사냥과 가족 사랑을 동시에 잘하는 만능견이에요. 애정이 넘치고 항상 주인 곁에 붙어 있는 달라붙는 견종이랍니다. 🥇',
+  },
+  {
+    korean: '살루키', english: 'Saluki',
+    apiPath: 'saluki', wikiTitle: 'Saluki',
+    description: '세계에서 가장 오래된 견종 중 하나로 이집트 파라오의 사냥개! 우아하고 날렵한 몸매로 빠르게 달려요. 조용하고 독립적인 고귀한 성격이랍니다. 👑',
+  },
+  {
+    korean: '아프간 하운드', english: 'Afghan Hound',
+    apiPath: 'hound/afghan', wikiTitle: 'Afghan Hound',
+    description: '길고 우아한 실크 같은 털의 귀족 견종! 아프가니스탄 산악 지대 출신으로 빠르고 민첩해요. 도도한 성격이지만 주인에게는 충성스럽답니다. 💫',
+  },
+  {
+    korean: '벨지안 말리노이즈', english: 'Belgian Malinois',
+    apiPath: 'malinois', wikiTitle: 'Belgian Malinois',
+    description: '군견·경찰견으로 가장 많이 활약하는 최고의 작업견! 지능과 체력이 뛰어나 어떤 훈련도 빠르게 익혀요. 미 특수부대와 함께 임무를 수행하기도 해요. 🪖',
+  },
+  {
+    korean: '라사 압소', english: 'Lhasa Apso',
+    apiPath: 'lhasa', wikiTitle: 'Lhasa Apso',
+    description: '티베트 사원을 지키던 신성한 견종! 긴 풍성한 털로 온몸이 덮여 있어요. 작지만 자존심 강하고 경계심이 높아 훌륭한 집 지킴이랍니다. 🏯',
+  },
+  {
+    korean: '비숑 프리제', english: 'Bichon Frise',
+    apiPath: 'frise/bichon', wikiTitle: 'Bichon Frise',
+    description: '솜사탕처럼 하얗고 폭신한 작은 견종! 명랑하고 애교가 넘쳐서 항상 주인을 웃게 해요. 털이 잘 빠지지 않아 알레르기가 있는 분들에게도 인기예요. 🍬',
+  },
+  {
+    korean: '미니어처 슈나우저', english: 'Miniature Schnauzer',
+    apiPath: 'schnauzer/miniature', wikiTitle: 'Miniature Schnauzer',
+    description: '수염과 눈썹이 특징적인 독일 소형 테리어! 용감하고 에너지가 넘쳐요. 털이 잘 빠지지 않고 지능이 높아 훈련이 잘 되는 견종이랍니다. 🧔',
+  },
+  {
+    korean: '잭 러셀 테리어', english: 'Jack Russell Terrier',
+    apiPath: 'terrier/russell', wikiTitle: 'Jack Russell Terrier',
+    description: '작은 몸에 폭발적인 에너지가 담긴 영국 테리어! 호기심이 많고 겁이 없어요. TV 드라마에도 자주 등장하는 사랑스럽고 장난꾸러기 견종이에요. ⚡',
+  },
+  {
+    korean: '스코티시 테리어', english: 'Scottish Terrier',
+    apiPath: 'terrier/scottish', wikiTitle: 'Scottish Terrier',
+    description: '스코틀랜드 출신의 강인한 소형 테리어! 독립적이고 자존심 강한 개성 있는 성격이에요. 모노폴리 게임 말로도 유명한 사랑스러운 견종이랍니다. 🎩',
+  },
+  {
+    korean: '케언 테리어', english: 'Cairn Terrier',
+    apiPath: 'terrier/cairn', wikiTitle: 'Cairn Terrier',
+    description: '영화 오즈의 마법사의 토토로 유명한 견종! 스코틀랜드 돌무덤에서 작은 동물을 사냥하던 개예요. 용감하고 호기심 많은 활발한 성격이랍니다. 🌈',
+  },
+  {
+    korean: '오스트레일리안 캐틀 독', english: 'Australian Cattle Dog',
+    apiPath: 'cattledog/australian', wikiTitle: 'Australian Cattle Dog',
+    description: '오스트레일리아 목장에서 소를 몰던 영리한 견종! 파란빛 털 때문에 블루 힐러라고도 불려요. 에너지가 넘치고 지능이 높아 훈련을 즐긴답니다. 🐄',
+  },
+  {
+    korean: '파피용', english: 'Papillon',
+    apiPath: 'papillon', wikiTitle: 'Papillon (dog)',
+    description: '나비처럼 생긴 귀여운 귀가 특징인 프랑스 소형견! 파피용은 프랑스어로 나비라는 뜻이에요. 지능이 매우 높고 민첩해 어질리티 대회에서 활약해요. 🦋',
+  },
 ];
