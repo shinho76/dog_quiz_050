@@ -40,19 +40,21 @@ function shuffle(arr) {
   return a;
 }
 
-const DECK_KEY = 'dog_quiz_deck';
+const DECK_KEY     = 'dog_quiz_deck';
+const DECK_VER_KEY = 'dog_quiz_deck_ver';
 
 function buildQuestions() {
-  let deck = (() => {
-    try {
-      const saved = JSON.parse(localStorage.getItem(DECK_KEY));
-      // 저장된 덱이 유효하고 현재 견종 수와 맞으면 재사용
-      if (Array.isArray(saved) && saved.length > 0 && saved.every(i => i >= 0 && i < BREEDS.length)) {
-        return saved;
-      }
-    } catch (_) {}
-    return shuffle(BREEDS.map((_, i) => i));
-  })();
+  let deck;
+  try {
+    const ver  = parseInt(localStorage.getItem(DECK_VER_KEY), 10);
+    const raw  = JSON.parse(localStorage.getItem(DECK_KEY));
+    const valid = ver === BREEDS.length &&
+      Array.isArray(raw) && raw.length > 0 &&
+      raw.every(i => Number.isInteger(i) && i >= 0 && i < BREEDS.length);
+    deck = valid ? raw : shuffle(BREEDS.map((_, i) => i));
+  } catch (_) {
+    deck = shuffle(BREEDS.map((_, i) => i));
+  }
 
   const indices = [];
   while (indices.length < TOTAL_QUESTIONS) {
@@ -61,6 +63,7 @@ function buildQuestions() {
   }
 
   localStorage.setItem(DECK_KEY, JSON.stringify(deck));
+  localStorage.setItem(DECK_VER_KEY, String(BREEDS.length));
   state.questions = indices.map(i => BREEDS[i]);
 }
 
