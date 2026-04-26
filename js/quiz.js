@@ -382,7 +382,18 @@ function startQuiz() {
 }
 
 // ── Init ──────────────────────────────────
+function clearStaleDeck() {
+  try {
+    const ver = parseInt(localStorage.getItem(DECK_VER_KEY), 10);
+    if (ver !== BREEDS.length) {
+      localStorage.removeItem(DECK_KEY);
+      localStorage.setItem(DECK_VER_KEY, String(BREEDS.length));
+    }
+  } catch (_) {}
+}
+
 function initApp() {
+  clearStaleDeck();
   $('btn-start').addEventListener('click', startQuiz);
   $('btn-restart').addEventListener('click', startQuiz);
 
