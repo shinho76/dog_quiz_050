@@ -40,8 +40,31 @@ function shuffle(arr) {
   return a;
 }
 
+const DECK_KEY     = 'dog_quiz_deck';
+const DECK_VER_KEY = 'dog_quiz_deck_ver';
+
 function buildQuestions() {
-  state.questions = shuffle(BREEDS).slice(0, TOTAL_QUESTIONS);
+  let deck;
+  try {
+    const ver  = parseInt(localStorage.getItem(DECK_VER_KEY), 10);
+    const raw  = JSON.parse(localStorage.getItem(DECK_KEY));
+    const valid = ver === BREEDS.length &&
+      Array.isArray(raw) && raw.length > 0 &&
+      raw.every(i => Number.isInteger(i) && i >= 0 && i < BREEDS.length);
+    deck = valid ? raw : shuffle(BREEDS.map((_, i) => i));
+  } catch (_) {
+    deck = shuffle(BREEDS.map((_, i) => i));
+  }
+
+  const indices = [];
+  while (indices.length < TOTAL_QUESTIONS) {
+    if (deck.length === 0) deck = shuffle(BREEDS.map((_, i) => i));
+    indices.push(deck.shift());
+  }
+
+  localStorage.setItem(DECK_KEY, JSON.stringify(deck));
+  localStorage.setItem(DECK_VER_KEY, String(BREEDS.length));
+  state.questions = indices.map(i => BREEDS[i]);
 }
 
 function generateChoices(correctBreed) {
@@ -359,7 +382,18 @@ function startQuiz() {
 }
 
 // ── Init ──────────────────────────────────
+function clearStaleDeck() {
+  try {
+    const ver = parseInt(localStorage.getItem(DECK_VER_KEY), 10);
+    if (ver !== BREEDS.length) {
+      localStorage.removeItem(DECK_KEY);
+      localStorage.setItem(DECK_VER_KEY, String(BREEDS.length));
+    }
+  } catch (_) {}
+}
+
 function initApp() {
+  clearStaleDeck();
   $('btn-start').addEventListener('click', startQuiz);
   $('btn-restart').addEventListener('click', startQuiz);
 
